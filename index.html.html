@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengumuman PPDB SDN 2 SOMOROTO 2025/2026</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5faff;
+            padding: 30px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 80%;
+            max-width: 500px;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+        }
+        .accepted {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .not-found {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pengumuman PPDB SDN 2 SOMOROTO</h1>
+    <h2>Tahun Ajaran 2025/2026</h2>
+    <p>Masukkan nama lengkap sesuai pendaftaran:</p>
+    <input type="text" id="searchInput" placeholder="Contoh: ABRIZAM PUTRA ARMADHANY">
+    <div class="result" id="result"></div>
+
+    <script>
+        const siswa = [
+            "ABRIZAM PUTRA ARMADHANY",
+            "AHMAD ABIYU ALIF MEINANDA",
+            "ALESHA MUFIDATUN AISYAH",
+            "ALINKA PUTRI SILVANA",
+            "ALLENA SYIFA MAHESWARI",
+            "ALLUNA NESHA MAHESWARI",
+            "ALYA AFKARINA MUMTAZA ARIFIN",
+            "ARBANI YOGA AFRIZA MAHENDRA",
+            "ARKA GIBRAN ALFATIH",
+            "ARKA MAULANA AKBAR",
+            "ARSYA SATRIATAMA",
+            "AURELIA OCTAVIA SETIANI",
+            "AZKAYRA MUTIARA PUTRI HAFIDZAH",
+            "AZZAHRA RADYA ALMIRA WARDHANI",
+            "BRYAN RIMBA ALKHALIFI",
+            "DAFFA ATAYA ALWARITZI",
+            "ELMYRA ALEA ZAYEDA",
+            "ELVINO DESFIAN ALFARIZI",
+            "ERINKA DWI AL MAHIRA",
+            "FAWAZ FATAHILAH DARMA SAKTY",
+            "LUCKY VARREL",
+            "MOHAMMAD ABIL ARSALAAN",
+            "MUHAMMAD ALVARO WAHYU KUSUMA",
+            "MUHAMMAD FAKHRI AFLAHUL ABDILLAH",
+            "MUHAMMAD AFIF NURSAHID",
+            "MUHAMMAD FATIH ALFARIZQI",
+            "MUHAMMAD FEBRIAN MUZAKKI ANDRIANSYAH",
+            "NABILA PUTRI NUR AZIZAH",
+            "NADYA ALYSSA AZZAHRA",
+            "NAFIAN CAHYA AJI PAMUNGKAS",
+            "NURDAFFA PUTRA PRATAMA",
+            "QENZY VIA FAYOLA",
+            "RAFKA AL GHIFARI",
+            "RAHMAWAN MANGIR WAHYU ROMADHON",
+            "RIFKA SOFEA EZMERALDA",
+            "ROVINDRA RAFFASYA ARKHAN RAMADHAN",
+            "SEPTIAN BAGAS WIDIANTO",
+            "SUKMA RAGA PRASETIYA",
+            "TATJANA HILYA ADZKIRA YUARDIKA",
+            "TENGKU GAZHALA AYRA SEMESTA AL WIMA",
+            "YASMIN KAMILA SYAPUTRI",
+            "YUWANATA GILANG ARASYID",
+            "ZHAFRAN PARSA AL KHAIRI",
+            "QUEEN ZEA ABDILLA ZUBI",
+            "MUHAMMAD ZACKY SUHARYONO",
+            "HAIDAR IRSYAD ALKHOIR"
+        ];
+
+        document.getElementById("searchInput").addEventListener("input", function () {
+            const input = this.value.trim().toUpperCase();
+            const resultDiv = document.getElementById("result");
+            if (!input) {
+                resultDiv.textContent = "";
+                resultDiv.className = "result";
+                return;
+            }
+            if (siswa.includes(input)) {
+                resultDiv.textContent = input + " - DITERIMA";
+                resultDiv.className = "result accepted";
+            } else {
+                resultDiv.textContent = "Nama tidak ditemukan.";
+                resultDiv.className = "result not-found";
+            }
+        });
+    </script>
+</body>
+</html>
